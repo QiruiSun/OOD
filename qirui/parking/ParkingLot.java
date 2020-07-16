@@ -53,19 +53,29 @@ public class ParkingLot {
 	}
 
 	public Ticket park(Vehicle car) {
+		ParkingSpot spot = searchForSpot(car);
+		if (spot == null) {
+			return null;
+		}
+		spot.checkIn(car);
+		Ticket ticket = new Ticket(LocalDateTime.now(), spot);
+		return ticket;
+	}
+
+	public boolean hasSpot(Vehicle car) {
+		ParkingSpot spot = searchForSpot(car);
+		return spot == null;
+	}
+
+	private ParkingSpot searchForSpot(Vehicle car) {
 		ParkingSpot curr = null;
-		Level chosen = null;
 		for (Level l : levels) {
 			curr = l.findSpot(car, false);
 			if (curr != null) {
-				chosen = l;
 				break;
 			}
 		}
-
-		curr.checkIn(car);
-		Ticket ticket = new Ticket(LocalDateTime.now(), chosen, curr);
-		return ticket;
+		return curr;
 	}
 }
 

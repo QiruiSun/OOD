@@ -5,19 +5,19 @@ import java.time.*;
 
 public class Ticket {
 	private LocalDateTime entryTime;
-	private Level level;
 	private ParkingSpot spot;
 	private boolean paid;
 	private LocalDateTime paidTime;
 
+	// private Level level;
 	// private ParkingLot lot;
 	
 
-	public Ticket(LocalDateTime time, Level level, ParkingSpot spot) {
+	public Ticket(LocalDateTime time, ParkingSpot spot) {
 		this.entryTime = time;
-		this.level = level;
 		this.spot = spot;
 		// this.lot = lot;
+		// this.level = level;
 	}
 
 	public int duration() {
