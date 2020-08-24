@@ -1,5 +1,5 @@
 import qirui.parking.*;
-
+import java.util.*;
 
 public class Starter {
 	
@@ -27,7 +27,55 @@ public class Starter {
 			System.out.println(e.getAmount());
 			System.out.println(e.getMessage());
 		}
-		
 	}
 
 }
+
+
+
+// public int minCuts(String input) {
+//     // Write your solution here
+//     int size = input.length();
+//     int[] M = new int[size+1];
+//     boolean[][] dp = new boolean[size+1][size+1];
+//     M[0] = -1;
+//     M[1] = 0;
+
+//     for (int i = 2; i <= size; i++) {
+//       int min = i;
+//       for (int j = i-1; j >= 0; j--) {
+//         if ((input.charAt(i-1) == input.charAt(j) && (dp[i-1][j+1] || i == j + 2)) || j + 1 == i) {
+//           dp[i][j] = true;
+//           min = Math.min(min, M[j] + 1);
+//         }
+//       }
+//       M[i] = min; 
+//     }
+//     return M[size];
+//   }
+
+//   public int minCuts(String input) {
+//     // Write your solution here
+//     if (input == null || input.length() == 0) {
+//       return 0;
+//     }
+      
+//     int size = input.length();
+//     int[] M = new int[size+1];
+//     M[0] = -1;
+//     M[1] = 0;
+    
+//     boolean[][] isP = new boolean[size+1][size+1];
+    
+//     for (int i = 2; i < M.length; i++) {
+//       M[i] = i;
+//       for (int j = i - 1; j >=0; j--) {
+//         int rightStart = j + 1;
+//         if (rightStart == i || ((rightStart + 1 == i || isP[rightStart + 1][i-1]) && input.charAt(rightStart - 1) == input.charAt(i - 1))) {
+//             isP[rightStart][i] = true;
+//             M[i] = Math.min(M[i], M[j] + 1);
+//         }
+//       }
+//     }
+//     return M[size];
+//   }

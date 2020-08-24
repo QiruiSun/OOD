@@ -1,0 +1,17 @@
+Black Jack Design
+
+1. Use case
+	start game
+	multiple players
+	One deck of cards
+	Can decide who wins
+	One hand per player
+
+2. Class
+
+	Card
+	Deck
+	Hand
+	Game
+
+	
