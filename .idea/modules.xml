@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OOD_Practice.iml" filepath="$PROJECT_DIR$/OOD_Practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOD.iml" filepath="$PROJECT_DIR$/OOD.iml" />
     </modules>
   </component>
 </project>
