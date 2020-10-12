@@ -1,4 +1,5 @@
 import qirui.parking.*;
+import qirui.filesystem.*;
 import java.util.*;
 
 public class Starter {
@@ -18,15 +19,34 @@ public class Starter {
 		// } catch(InterruptedException e) {
 		//   System.out.println(p.checkBalance(ticket));
 		// }
-		System.out.println(ticket.toString());
-		System.out.println(p.leave(ticket));
-		System.out.println(p.checkBalance(ticket));
-		try {
-			p.pay(90, ticket);
-		} catch(InsufficientFundsException e) {
-			System.out.println(e.getAmount());
-			System.out.println(e.getMessage());
-		}
+		// System.out.println(ticket.toString());
+		// System.out.println(p.leave(ticket));
+		// System.out.println(p.checkBalance(ticket));
+		// try {
+		// 	p.pay(90, ticket);
+		// } catch(InsufficientFundsException e) {
+		// 	System.out.println(e.getAmount());
+		// 	System.out.println(e.getMessage());
+		// }
+
+
+		// FileSystem
+
+		FileSystem f = new FileSystem();
+		f.mkdir("/home");
+		System.out.println(f.list());
+		f.mkdir("qsun1");
+		f.list();
+		f.cd("qsun1");
+		f.list();
+		f.mkdir("node");
+		f.list();
+		f.cd();
+		f.list();
+		f.cd("/qsun1/node");
+		f.list();
+		System.out.println(f.currentPath());
+		f.cd("/qsun1/node/sadf");
 	}
 
 }

@@ -1,0 +1,19 @@
+File system design
+
+1. Use case
+	find File
+	change directory
+	create directory
+	create File
+	list directory
+	copy
+	mv
+
+2. Class
+
+	Entry (base class)
+	file 
+	directory
+	system
+
+	

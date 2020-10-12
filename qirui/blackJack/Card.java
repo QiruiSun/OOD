@@ -14,7 +14,7 @@ public class Card {
 		return this.faceValue.val();
 	}
 
-	static enum Face {
+	enum Face {
 		ONE(1),
 		TWO(2),
 		THREE(2);

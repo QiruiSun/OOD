@@ -8,7 +8,7 @@ public class Game {
 	public Game(int playerNumber) {
 		List<Hand> hands = new ArrayList<>();
 		while (playerNumber > 0) {
-			hands.add(new Hand());
+			hands.add(new BlackJackHand());
 			playerNumber--;
 		}
 		this.hands = hands;
@@ -86,7 +86,7 @@ public class Game {
 				int curr = hand.value();
 				if (curr > max) {
 					max = curr;
-					winners.clear()
+					winners.clear();
 					winners.add(hand);
 				} else if (curr == max) {
 					winners.add(hand);
@@ -98,11 +98,11 @@ public class Game {
 
 	private List<Hand> anyBlackJack() {
 		List<Hand> winners = new ArrayList<>();
-		for (Hand hand : hands) {
-			if (hand.blackJack()) {
-				winners.add(hand);
-			}
-		}
+		// for (Hand hand : hands) {
+		// 	if (hand.blackJack()) {
+		// 		winners.add(hand);
+		// 	}
+		// }
 		return winners;
 	}
 

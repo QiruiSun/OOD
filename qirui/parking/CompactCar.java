@@ -1,7 +1,6 @@
 package qirui.parking;
 
 public class CompactCar extends Vehicle {
-
 	public CompactCar(String plate) {
 		super(plate);
 	}

@@ -1,0 +1,19 @@
+Use cases:
+
+1. add new books into the system
+2. user can borrow books
+3. user can return books
+4. System can track each book's due date
+5. user can have membership with the library
+
+
+
+Classes:
+
+Book
+
+User
+
+Membership
+
+
