@@ -14,6 +14,23 @@ Book
 
 User
 
-Membership
+Membership (member interface - reserve, borrow, return)
+
+Catalog for search and inventory managment;
+
+Reservation
+
+Transaction
+
+Library
+
+    API:
+        reserve a book (membership) - returns reservation record or raise exception
+        borrow a book (membership) - returns transaction record or raise exception
+        search a book by title (String title) - List<BookItem>
+        create membership (user) - returns membership record. with default expiry date
+        get membership by user - return membership record
+
+
 
 
