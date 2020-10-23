@@ -1,0 +1,31 @@
+Vending Machine
+
+
+Use Case:
+
+1. take cash or credit card
+2. user can see all products
+3. user can pick one item
+4. user can pay for it.
+5. if cash, give change, if card, return 0
+6. dispense item
+7. refund
+
+
+
+
+
+Classes:
+
+
+1. VendingMachine
+2. Payment service
+3. Item
+4. Inventory
+
+
+
+
+
+
+

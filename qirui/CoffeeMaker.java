@@ -128,5 +128,13 @@ class AdvancedCoffeeMaker implements CoffeeMaker {
 class CoffeeTester {
     public static void main(String[] args) {
         CoffeeMaker a = new AdvancedCoffeeMaker();
+        String input = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+
+        for (int i = 0; i < input.length(); i++) {
+            char df = input.charAt(i);
+            System.out.println(df);
+        }
+        String processed = input.replaceAll("\\n", "").replaceAll("\\t", "/");
+        System.out.println(' '- 'a');
     }
 }
