@@ -101,6 +101,11 @@ class SimpleElevator implements Elevator {
             return;
         }
 
+        if (counter.get(goTo).size() > 0) {
+            counter.get(goTo).add(request);
+            return;
+        }
+
         if (request.destination > current.number) {
             goingUp.offer(goTo);
         } else {
@@ -126,7 +131,7 @@ class SimpleElevator implements Elevator {
             throw new OutofSpaceException(numberOfPpl, capacity);
         }
         counter.get(current).clear();
-
+        numberOfPpl = numberOfPpl < 0 ? 0 : numberOfPpl;
         return pplGetOff;
     }
 
@@ -192,7 +197,7 @@ class Building {
             this.floorMap.put(i, new Floor(i));
         }
         while (number > 0) {
-            elevators.add(new SimpleElevator(floorMap, 20));
+            elevators.add(new SimpleElevator(floorMap, 30));
             number--;
         }
     }
@@ -215,6 +220,15 @@ class Tester {
                 ele.stop();
             } catch (OutofSpaceException e) {
                 System.out.println(e.getMessage());
+            }
+            if (ele.getCurrentFloor() > 6) {
+                ele.takeCommand(new GetOff(2, 6));
+            }
+            if (ele.getCurrentFloor() > 8) {
+                ele.takeCommand(new OnAboard(4, 3));
+            }
+            if (ele.getCurrentFloor() < 3) {
+                ele.takeCommand(new OnAboard(8, 3));
             }
         }
         System.out.println(ele.isStopped());
