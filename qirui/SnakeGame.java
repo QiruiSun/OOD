@@ -1,5 +1,7 @@
 package qirui;
 import java.util.*;
+import org.json.*;
+
 
 class SnakeGame {
     private final static Map<String, int[]> DIRS = new HashMap<>(){{
@@ -115,6 +117,14 @@ class SnakeTester {
 
         String test = " 6-4 / 2 ";
         System.out.println(test.replaceAll(" ", ""));
+
+        JSONObject myJson = new JSONObject("{ \"number_list\": [ 1.9, 2.9, 3.4, 3.5 ], \"string_list\": [ \"Carlos\", \"d\", 3.4, 3.5 ], \"extra_data\": {}, \"name\": \"Carlos\", \"last_name\": \"Carlos\", \"bank_account_balance\": 20.2, \"age\": 21, \"is_developer\": true }");
+
+        // Get some keys from the JSON Object
+        System.out.print(myJson.get("name")); // Carlos
+        System.out.print(myJson.get("age")); // 21
+
+        System.out.println(Integer.MAX_VALUE);
     }
 }
 
